@@ -7,7 +7,7 @@ function digitalClockNow() {
   let h = time.getHours().toString();
   let m = time.getMinutes().toString();
   let s = time.getSeconds().toString();
-  if (m == 50 && s == 0) {
+  if (m == 50 && s > 0 && s < 2) {
     audio.play();
   }
   if (h.length < 2) {
