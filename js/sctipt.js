@@ -31,7 +31,7 @@ function start() {
   let secondPositionEnd = secondPositionStart + 360;
   let minutePositionStart = m * 6 + (s * 0.1);
   let minutePositionEnd = minutePositionStart + 360;
-  let hourPositionStart = h * 30 + (m * 0.5) + (s * 0.1);
+  let hourPositionStart = h * 30 + (m * 0.5) + (s * 0.00069444);
   let hourPositionEnd = hourPositionStart + 360;
   clock.style.setProperty('--secondPositionStart', secondPositionStart + 'deg');
   clock.style.setProperty('--secondPositionEnd', secondPositionEnd + 'deg');
