@@ -22,6 +22,7 @@ function digitalClockNow() {
   digitalClock.innerHTML = h + ':' + m + ':' + s;
 }
 function start() {
+  setInterval(digitalClockNow, 1000);
   let time = new Date();
   let s = time.getSeconds().toString();
   let m = time.getMinutes().toString();
@@ -38,6 +39,5 @@ function start() {
   clock.style.setProperty('--minutePositionEnd', minutePositionEnd + 'deg');
   clock.style.setProperty('--hourPositionStart', hourPositionStart + 'deg');
   clock.style.setProperty('--hourPositionEnd', hourPositionEnd + 'deg');
-  setInterval(digitalClockNow, 1000);
 }
 start();
