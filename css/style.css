@@ -29,14 +29,14 @@ img.logo{
   width: 12.5%;
   display: block;
   animation: test 2s linear infinite;
-  z-index: -550;
+  z-index: 0;
 }
 img.title{
   position: absolute;
   top: 40%;
   left: 60%;
   width: 25%;
-  z-index: -550;
+  z-index: 0;
 }
 .time{
   font-family: 'Russo One', sans-serif;
