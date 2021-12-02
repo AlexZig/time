@@ -6,6 +6,9 @@ let digitalClock = document.querySelector('#time');
 let audio = document.createElement('audio');
 audio.setAttribute('src' , './audio/Увидомление.mp3');
 function digitalClockNow() {
+  if (window.innerHeight > window.innerWidth) {
+    clock.classList.toggle('clock_big');
+  }
   let time = new Date();
   let h = time.getHours().toString();
   let m = time.getMinutes().toString();
@@ -25,6 +28,9 @@ function digitalClockNow() {
   digitalClock.innerHTML = h + ':' + m + ':' + s;
 }
 function start() {
+  if (window.innerHeight > window.innerWidth) {
+    clock.classList.toggle('clock_big');
+  }
   setInterval(digitalClockNow, 1);
   let time = new Date();
   let s = time.getSeconds().toString();
@@ -43,8 +49,5 @@ function start() {
   clock.style.setProperty('--hourPositionStart', hourPositionStart + 'deg');
   clock.style.setProperty('--hourPositionEnd', hourPositionEnd + 'deg');
   digitalClock.innerHTML = h + ':' + m + ':' + s;
-  if (window.innerHeight > window.innerWidth) {
-    clock.classList.toggle('clock_big');
-  }
 }
 start();
