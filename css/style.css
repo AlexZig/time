@@ -29,12 +29,14 @@ img.logo{
   width: 12.5%;
   display: block;
   animation: test 2s linear infinite;
+  z-index: 0;
 }
 img.title{
   position: absolute;
   top: 40%;
   left: 60%;
   width: 25%;
+  z-index: 0;
 }
 .time{
   font-family: 'Russo One', sans-serif;
@@ -44,6 +46,7 @@ img.title{
   bottom: 25%;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 0;
 }
 .clock_big .time{
   font-size: 6vw;
@@ -63,18 +66,21 @@ img.title{
   width: 2.8%;
   background-color: #662D8F;
   animation: goHour 43200s linear infinite;
+  z-index: 1;
 }
 .minute{
   height: 45%;
   width: 1.8%;
   background-color: #4A9FE0;
   animation: goMinute 3600s linear infinite;
+  z-index: 2;
 }
 .second{
   height: 50%;
   width: 0.8%;
   background-color: #FF9D00;
   animation: goSecond 60s linear infinite;
+  z-index: 3;
 }
 .contre{
   display: block;
@@ -86,6 +92,7 @@ img.title{
   width: 4%;
   height: 4%;
   background-color: black;
+  z-index: 4;
 }
 .settings{
   display: block;
