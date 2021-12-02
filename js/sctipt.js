@@ -1,4 +1,7 @@
 let clock = document.querySelector('.clock');
+let settings = document.querySelector('#settings');
+let alarm = document.querySelector('#alarm');
+let reminder = document.querySelector('#reminder');
 let digitalClock = document.querySelector('#time');
 let audio = document.createElement('audio');
 audio.setAttribute('src' , './audio/Увидомление.mp3');
@@ -7,7 +10,7 @@ function digitalClockNow() {
   let h = time.getHours().toString();
   let m = time.getMinutes().toString();
   let s = time.getSeconds().toString();
-  if (m == 50 && s > 0 && s < 2) {
+  if (m == 50 && s == 0) {
     audio.play();
   }
   if (h.length < 2) {
@@ -22,7 +25,7 @@ function digitalClockNow() {
   digitalClock.innerHTML = h + ':' + m + ':' + s;
 }
 function start() {
-  setInterval(digitalClockNow, 1000);
+  setInterval(digitalClockNow, 1);
   let time = new Date();
   let s = time.getSeconds().toString();
   let m = time.getMinutes().toString();
@@ -31,7 +34,7 @@ function start() {
   let secondPositionEnd = secondPositionStart + 360;
   let minutePositionStart = m * 6 + (s * 0.1);
   let minutePositionEnd = minutePositionStart + 360;
-  let hourPositionStart = h * 30 + (m * 0.5) + (s * 0.00069444);
+  let hourPositionStart = h * 30 + (m * 0.5) + (s * 0.00833333);
   let hourPositionEnd = hourPositionStart + 360;
   clock.style.setProperty('--secondPositionStart', secondPositionStart + 'deg');
   clock.style.setProperty('--secondPositionEnd', secondPositionEnd + 'deg');
@@ -39,5 +42,9 @@ function start() {
   clock.style.setProperty('--minutePositionEnd', minutePositionEnd + 'deg');
   clock.style.setProperty('--hourPositionStart', hourPositionStart + 'deg');
   clock.style.setProperty('--hourPositionEnd', hourPositionEnd + 'deg');
+  digitalClock.innerHTML = h + ':' + m + ':' + s;
+  if (window.innerHeight > window.innerWidth) {
+    clock.classList.toggle('clock_big');
+  }
 }
 start();
