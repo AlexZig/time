@@ -107,6 +107,9 @@ img.title{
   cursor: pointer;
   z-index: 0;
 }
+.clock_big .settings{
+  width:4%;
+}
 .alarm{
   position: absolute;
   top: 40%;
