@@ -8,7 +8,7 @@ body{
 .clock{
   width: 40vw;
   height: 40vw;
-  border: 1vw solid black;
+  border: 2.5% solid black;
   border-style: solid;
   border-radius: 100%;
   position: relative;
@@ -29,14 +29,14 @@ img.logo{
   width: 12.5%;
   display: block;
   animation: test 2s linear infinite;
-  z-index: 0;
+  z-index: -550;
 }
 img.title{
   position: absolute;
   top: 40%;
   left: 60%;
   width: 25%;
-  z-index: 0;
+  z-index: -550;
 }
 .time{
   font-family: 'Russo One', sans-serif;
