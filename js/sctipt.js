@@ -35,7 +35,7 @@ function start() {
   }else{
     clock.classList.remove('clock_big');
   }
-  setInterval(digitalClockNow, 1);
+  setInterval(digitalClockNow, 100);
   let time = new Date();
   let s = time.getSeconds().toString();
   let m = time.getMinutes().toString();
