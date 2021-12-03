@@ -22,6 +22,11 @@ function digitalClockNow() {
     s = "0" + s;
   };
   digitalClock.innerHTML = h + ':' + m + ':' + s;
+  if (window.innerHeight > window.innerWidth) {
+    clock.classList.add('clock_big');
+  }else{
+    clock.classList.remove('clock_big');
+  }
 }
 function secondControl() {
   let time = new Date();
