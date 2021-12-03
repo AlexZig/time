@@ -8,7 +8,7 @@ body{
 .clock{
   width: 40vw;
   height: 40vw;
-  border: 2.5% solid black;
+  border: 1vw solid black;
   border-style: solid;
   border-radius: 100%;
   position: relative;
@@ -156,18 +156,18 @@ img.title{
 }
 @keyframes test{
   0%{
-    transform: perspective(500px) rotateY(0deg);
+    transform: scale(1);
   }
   25%{
-    transform: perspective(500px) rotateY(45deg);
+    transform: scale(1.1);
   }
   50%{
-    transform: perspective(500px) rotateY(0deg);
+    transform: scale(1);
   }
   75%{
-    transform: perspective(500px) rotateY(-45deg);
+    transform: scale(0.9);
   }
   100%{
-    transform: perspective(500px) rotateY(0deg);
+    transform: scale(1);
   }
 }
