@@ -4,3 +4,9 @@
   height: 80vw;
   }
 }
+@media screen and (orientation:landscape) and (max-width:769px){
+  .clock{
+  width: 80vh;
+  height: 80vh;
+  }
+}
