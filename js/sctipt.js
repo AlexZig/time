@@ -1,16 +1,10 @@
 let clock = document.querySelector('.clock');
-let settings = document.querySelector('#settings');
-let alarm = document.querySelector('#alarm');
-let reminder = document.querySelector('#reminder');
+let startTime = new Date();
+let startSecond = startTime.getSeconds().toString();
 let digitalClock = document.querySelector('#time');
 let audio = document.createElement('audio');
 audio.setAttribute('src' , './audio/Увидомление.mp3');
 function digitalClockNow() {
-  if (window.innerHeight > window.innerWidth) {
-    clock.classList.add('clock_big');
-  }else{
-    clock.classList.remove('clock_big');
-  }
   let time = new Date();
   let h = time.getHours().toString();
   let m = time.getMinutes().toString();
@@ -29,29 +23,30 @@ function digitalClockNow() {
   };
   digitalClock.innerHTML = h + ':' + m + ':' + s;
 }
-function start() {
-  if (window.innerHeight > window.innerWidth) {
-    clock.classList.add('clock_big');
-  }else{
-    clock.classList.remove('clock_big');
-  }
-  setInterval(digitalClockNow, 100);
+function secondControl() {
   let time = new Date();
   let s = time.getSeconds().toString();
-  let m = time.getMinutes().toString();
-  let h = time.getHours().toString();
-  let secondPositionStart = s * 6;
-  let secondPositionEnd = secondPositionStart + 360;
-  let minutePositionStart = m * 6 + (s * 0.1);
-  let minutePositionEnd = minutePositionStart + 360;
-  let hourPositionStart = h * 30 + (m * 0.5) + (s * 0.00833333);
-  let hourPositionEnd = hourPositionStart + 360;
-  clock.style.setProperty('--secondPositionStart', secondPositionStart + 'deg');
-  clock.style.setProperty('--secondPositionEnd', secondPositionEnd + 'deg');
-  clock.style.setProperty('--minutePositionStart', minutePositionStart + 'deg');
-  clock.style.setProperty('--minutePositionEnd', minutePositionEnd + 'deg');
-  clock.style.setProperty('--hourPositionStart', hourPositionStart + 'deg');
-  clock.style.setProperty('--hourPositionEnd', hourPositionEnd + 'deg');
-  digitalClock.innerHTML = h + ':' + m + ':' + s;
+  console.log(time)
+  if (startSecond < s) {
+    clearInterval(startInterval)
+    let s = time.getSeconds().toString();
+    let m = time.getMinutes().toString();
+    let h = time.getHours().toString();
+    let secondPositionStart = s * 6;
+    let secondPositionEnd = secondPositionStart + 360;
+    let minutePositionStart = m * 6 + (s * 0.1);
+    let minutePositionEnd = minutePositionStart + 360;
+    let hourPositionStart = h * 30 + (m * 0.5) + (s * 0.00833333);
+    let hourPositionEnd = hourPositionStart + 360;
+    clock.style.setProperty('--secondPositionStart', secondPositionStart + 'deg');
+    clock.style.setProperty('--secondPositionEnd', secondPositionEnd + 'deg');
+    clock.style.setProperty('--minutePositionStart', minutePositionStart + 'deg');
+    clock.style.setProperty('--minutePositionEnd', minutePositionEnd + 'deg');
+    clock.style.setProperty('--hourPositionStart', hourPositionStart + 'deg');
+    clock.style.setProperty('--hourPositionEnd', hourPositionEnd + 'deg');
+    clock.classList.add('clock_active');
+    digitalClock.innerHTML = h + ':' + m + ':' + s;
+    setInterval(digitalClockNow, 1);
+  }
 }
-start();
+startInterval = setInterval(secondControl, 1);
