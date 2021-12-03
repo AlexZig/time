@@ -22,17 +22,12 @@ function digitalClockNow() {
     s = "0" + s;
   };
   digitalClock.innerHTML = h + ':' + m + ':' + s;
-  if (window.innerHeight > window.innerWidth) {
-    clock.classList.add('clock_big');
-  }else{
-    clock.classList.remove('clock_big');
-  }
 }
 function secondControl() {
   let time = new Date();
   let s = time.getSeconds().toString();
   console.log(time)
-  if (startSecond < s) {
+  if (startSecond == s -2) {
     clearInterval(startInterval)
     let s = time.getSeconds().toString();
     let m = time.getMinutes().toString();
@@ -54,4 +49,7 @@ function secondControl() {
     setInterval(digitalClockNow, 1);
   }
 }
-startInterval = setInterval(secondControl, 1);
+function start() {
+  startInterval = setInterval(secondControl, 1);
+}
+setTimeout(start, 1000)
