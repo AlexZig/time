@@ -29,11 +29,6 @@ body{
   --hourPositionStart: 0deg;
   --hourPositionEnd: 0deg;
 }
-
-.clock_big{
-  width: 90vw;
-  height: 90vw;
-}
 img.logo{
   position: absolute;
   top: 25%;
@@ -59,20 +54,13 @@ img.title{
   left: 50%;
   transform: translateX(-50%);
 }
-.clock_big .time{
-  font-size: 6vw;
-}
 .hour, .minute, .second{
   position: absolute;
   border-radius: 100px;
   bottom: 50%;
   left: 50%;
   transform: translate(-50%, 20%);
-  -ms-transform: translate(-50%, 20%);
-  -webkit-transform: translate(-50%, 20%);
   transform-origin: 50% 80%;
-  -ms-transform-origin: 50% 80%;
-  -ms-transform-origin: 50% 80%;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.733);
   display: none;
 }
@@ -121,36 +109,12 @@ img.title{
   cursor: pointer;
   z-index: 0;
 }
-.alarm{
-  position: absolute;
-  top: 40%;
-  right: 0;
-  z-index: -1;
-  width: 10vw;
-  transition: all 0.3s;
-}
-.reminder{
-  position: absolute;
-  bottom: 40%;
-  right: 0;
-  z-index: -1;
-  width: 20vw;
-  transition: all 0.3s;
-}
-.button_active{
-  right: -20vw;
-  z-index: 0;
-}
 @keyframes goSecond{
   0%{
     transform: translate(-50%, 20%) rotate(var(--secondPositionStart));
-    -ms-transform: translate(-50%, 20%) rotate(var(--secondPositionStart));
-    -webkit-transform: translate(-50%, 20%) rotate(var(--secondPositionStart));
   }
   100%{
     transform: translate(-50%, 20%) rotate(var(--secondPositionEnd));
-    -ms-transform: translate(-50%, 20%) rotate(var(--secondPositionEnd));
-    -webkit-transform: translate(-50%, 20%) rotate(var(--secondPositionEnd));
   }
 }
 @keyframes goMinute{
