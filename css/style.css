@@ -46,8 +46,8 @@ img.title{
   z-index: 0;
 }
 .time{
-  font-family: 'Russo One', sans-serif;
-  font-size: 3vw;
+  font-family: "Digib";
+  font-size: 10vh;
   color: #662D8F;
   position: absolute;
   bottom: 25%;
