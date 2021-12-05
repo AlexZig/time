@@ -11,9 +11,6 @@
   <meta property="og:image:width" content="400" />
   <meta property="og:image:height" content="300" />
   <meta property="og:site_name" content="Сайт ученика школы Hello World">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/zero.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/media.css">
@@ -26,10 +23,25 @@
     <div class="hour"></div>
     <div class="minute"></div>
     <div class="second"></div>
+    <div class="alarm-arrow"></div>
     <div class="contre"></div>
-    <div id="settings" class="settings"></div>
-<!--     <button id="alarm" class="alarm">Установить будильник</button>
-    <button id="reminder" class="reminder">Установить ежечастное напоминиение</button> -->
+    <div id="settings" class="settings" type="button">
+      <button id="alarm" class="alarm"></button>
+      <button id="reminder" class="reminder"></button>
+    </div>
+    <form class="form__alarm" action="#">
+      <button id="formAlarmClouse" class="form__clouse">X</button>
+      <h2>Установка будильника</h2>
+      <input id="alarmHourInput" type="number" placeholder="Выберете час">
+      <input id="alarmMinuteInput" type="number" placeholder="Выберете минуту">
+      <button id="alarmInstall">Установить</button>
+    </form>
+    <form class="form__reminder" action="#">
+      <button id="formReminderClouse" class="form__clouse">X</button>
+      <h2>Ежечасовое напоминание</h2>
+      <input id="reminderMinuteInput" type="number" placeholder="Выберете минуту">
+      <button id="reminderInstall">Установить</button>
+    </form>
   </div>
   <script src="./js/sctipt.js"></script>
 </body>
