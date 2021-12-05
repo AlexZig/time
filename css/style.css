@@ -54,7 +54,7 @@ img.title{
   left: 50%;
   transform: translateX(-50%);
 }
-.hour, .minute, .second{
+.hour, .minute, .second, .alarm-arrow, .reminder-arrow{
   position: absolute;
   border-radius: 100px;
   bottom: 50%;
@@ -85,6 +85,18 @@ img.title{
   animation: goSecond 60s linear infinite;
   z-index: 3;
 }
+.alarm-arrow{
+  transform: translate(-50%, 20%) rotate(var(--alarmArrowPosition));
+  background-color: red;
+  height: 55%;
+  width: 0.6%;
+  opacity: 0;
+  transition: 0.2s;
+  z-index: 4;
+}
+.alarm-arrow_active{
+  opacity: 1;
+}
 .contre{
   position: absolute;
   border-radius: 100px;
@@ -108,6 +120,118 @@ img.title{
   transform: translate(100%, -50%);
   cursor: pointer;
   z-index: 0;
+}
+.settings{
+  display: block;
+  position: absolute;
+  width: 6%;
+  height: 10%;
+  background-color: black;
+  border-radius: 5px;
+  top: 50%;
+  right: 0;
+  transform: translate(100%, -50%);
+  cursor: pointer;
+  z-index: 0;
+}
+.inactive{
+  pointer-events: none;
+}
+.alarm, .reminder{
+  position: absolute;
+  height: 10vh;
+  width: 10vh;
+  transition: all 0.3s;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 100%;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  visibility: hidden;
+  opacity: 0;
+}
+.alarm:hover, .reminder:hover{
+  transform: scale(1.1);
+}
+.alarm{
+  top: -20vh;
+  right: 0vh;
+  background-image: url(../img/Alarm.svg);
+}
+.reminder{
+  bottom: -20vh;
+  right: 0vh;
+  background-image: url(../img/reminder.svg);
+}
+.settings_active .alarm, .settings_active .reminder{
+  visibility: visible;
+  opacity: 1;
+}
+form{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 50%;
+  background-color: white;
+  padding: 2vh 1vh;
+  border-radius: 1vh;
+  box-shadow: 0 0 1vh;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+}
+.form_active{
+  visibility: visible;
+  opacity: 1;
+}
+.form__clouse{
+  position: absolute;
+  top: -2.5vh;
+  right: -2.5vh;
+  width: 5vh;
+  height: 5vh;
+}
+form h2{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2.5vh;
+  font-weight: bold;
+  margin-bottom: 3%;
+}
+form input{
+  border: 2px solid #4A9FE0;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 1% 0;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s;
+}
+form input:focus{
+  box-shadow: 0 0px 4px black;
+}
+form button{
+  width: 100%;
+  padding: 5px;
+  background-color: #4A9FE0;
+  color: white;
+  font-size: 2.5vh;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 1%;
+  transition: all 0.3s;
+}
+form button:hover{
+  box-shadow: 0 2px 2px black;
+}
+form button:active{
+  box-shadow: 0 1px 1px black;
+  transform: scale(0.98);
+  transition: 0.1s;
 }
 @keyframes goSecond{
   0%{
